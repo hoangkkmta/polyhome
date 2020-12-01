@@ -1,0 +1,13 @@
+{
+    "name": "Host",
+    "alias": "host",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Host\\Providers\\HostServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
