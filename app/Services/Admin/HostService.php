@@ -33,6 +33,7 @@ class HostService
     public function store($request)
     {
         $data = request()->all();
+        $data['password'] = Hash::make($request->password);
         $admin = Host::create($data);
         return $this->returnSuccessWithRoute('admin.chu-nha.index', __('messages.data_create_success'));
     }
