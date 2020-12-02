@@ -52,6 +52,7 @@ class BuildingCustomerService
         $data['building'] = Building::where('buildings.slug', $slug)
                             ->first();
         $data['room'] = Room::where('building_id', $data['building']->id)
+                        ->whereIn('status',  [2,3])
                         ->orderBy('name', 'asc')
                         ->get();
         $data['buildings'] = Building::all()->where('status', 1)->sortByDesc('id')->take(4);
@@ -74,6 +75,7 @@ class BuildingCustomerService
         $data['building'] = Building::where('buildings.slug', $slug)
                             ->first();
         $data['rooms'] = Room::where('building_id', $data['building']->id)
+                        ->whereIn('status',  [2,3])
                         ->orderBy('name', 'asc')
                         ->get();
         $data['room'] = Room::find($id);

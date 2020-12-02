@@ -603,7 +603,9 @@ style="clear: both">
                                             style="width: 100%">
                                             @foreach ($data['room'] as $item)
                                                 <option value="{{ $item->id }}">
-                                                    {{ $item->name }}
+                                                    @if ($item->status !== 1)
+                                                        {{ $item->name }}
+                                                    @endif
                                                 </option>
                                             @endforeach
                                         </select>
