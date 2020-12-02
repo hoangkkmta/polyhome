@@ -3,6 +3,7 @@ namespace App\Services\Admin;
 
 use App\Models\Host;
 use App\Traits\WebResponseTrait;
+use Illuminate\Support\Facades\Hash;
 
 class HostService
 {

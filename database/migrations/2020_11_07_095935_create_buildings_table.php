@@ -19,6 +19,7 @@ class CreateBuildingsTable extends Migration
             $table->string('name');
             $table->string('slug')->nullable();
             $table->string('image')->nullable();
+            $table->integer('price')->nullable();
             $table->integer('electricity_price')->nullable();
             $table->integer('water_price')->nullable();
             $table->integer('internet_price')->nullable();
