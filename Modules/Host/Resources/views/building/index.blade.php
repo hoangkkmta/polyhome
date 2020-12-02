@@ -53,6 +53,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Tên </th>
+                                        <th>Số phòng</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
@@ -64,6 +65,9 @@
                                             </td>
                                             <td>
                                                 {{ $row->name }}
+                                            </td>
+                                            <td>
+                                                {{ $row->room->count() }}
                                             </td>
                                             <td>
                                                 <div class="btn-group">

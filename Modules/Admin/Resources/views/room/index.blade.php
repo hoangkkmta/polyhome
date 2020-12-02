@@ -49,6 +49,7 @@
                                         <th>Id</th>
                                         <th>Tên phòng</th>
                                         <th>Nhà</th>
+                                        <th>Trạng thái</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
@@ -63,6 +64,15 @@
                                             </td>
                                             <td>
                                                 {{ $row->building->name }}
+                                            </td>
+                                            <td>
+                                                @if ($row->status == 2)
+                                                    <b class="text-warning">Còn phòng</b>
+                                                @elseif($row->status == 1)
+                                                    <b class="text-success">Đã cho thuê</b>
+                                                @else
+                                                <b class="text-danger">Hết phòng</b>
+                                                @endif
                                             </td>
                                             <td>
                                                 <div class="btn-group">

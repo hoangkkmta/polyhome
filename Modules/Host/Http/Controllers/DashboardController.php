@@ -2,7 +2,9 @@
 
 namespace Modules\Host\Http\Controllers;
 
+use App\Models\Building;
 use App\Models\Order;
+use App\Models\Room;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -27,7 +29,9 @@ class DashboardController extends Controller
                             ->count();
 
         $orders = DB::select('SELECT month(created_at) month_date, COUNT(DISTINCT id) month_order FROM orders WHERE year(created_at) = ' .$now->year. ' AND host_id = '. Auth::user()->id . ' GROUP BY month(created_at)' );
-
+        $totalBuilding = Building::where('host_id', Auth::user()->id)->count();
+        $totalRoom = Room::where('host_id', Auth::user()->id)->count();
+        $data = Building::all();
         return view(
             'host::index',
             [
@@ -35,6 +39,9 @@ class DashboardController extends Controller
                 'now' => $now,
                 'totalOrderMonth' => $totalOrderMonth,
                 'orders' => $orders,
+                'totalBuilding' => $totalBuilding,
+                'totalRoom' => $totalRoom,
+                'data' => $data,
             ]
         );
     }

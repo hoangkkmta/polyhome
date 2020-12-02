@@ -30,7 +30,7 @@
                         <input type="hidden" name="id" value="{{ $data->id }}">
                         <input type="hidden" name="host_id" value="{{ Auth::user()->id }}">
                         <div class="form-group">
-                            <label>Tên:</label>
+                            <label>Tên số nhà:</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name', $data->name) }}">
                             @error('name')
                             <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label>Giá phòng:</label>
-                            <input type="text" class="form-control" name="price" value="{{ old('price', $data->price) }}">
+                            <input type="number" class="form-control" name="price" value="{{ old('price', $data->price) }}">
                             @error('price')
                             <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
                             @enderror

@@ -62,6 +62,36 @@
             </div>
             <!-- /.col -->
 
+            <div class="col-12 col-sm-6 col-md-6">
+              <div class="info-box">
+                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-building"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Số nhà cho thuê</span>
+                  <span class="info-box-number">
+                      {{ number_format($totalBuilding, 0, ',', ' ') }}
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-6">
+              <div class="info-box">
+                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-door-open"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Số lượng phòng cho thuê</span>
+                  <span class="info-box-number">
+                      {{ number_format($totalRoom, 0, ',', ' ') }}
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+
             <!-- /.col -->
           </div>
           <!-- /.row -->
@@ -89,6 +119,57 @@
             <!-- /.col -->
           </div>
           <!-- /.row -->
+
+          <div class="row">
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh sách nhà</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Tên </th>
+                                    <th>Số phòng</th>
+                                    <th width="10%">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $row)
+                                    <tr>
+                                        <td>
+                                            {{ $row->id }}
+                                        </td>
+                                        <td>
+                                            {{ $row->name }}
+                                        </td>
+                                        <td>
+                                            {{ $row->room->count() }}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="{{ route('host.nha-cho-thue.show', [$row->id]) }}" class="btn btn-app">
+                                                    <i class="fas fa-edit "></i> Chi tiết
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
 
         </div><!--/. container-fluid -->
       </section>

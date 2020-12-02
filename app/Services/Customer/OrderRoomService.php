@@ -4,6 +4,7 @@ namespace App\Services\Customer;
 use App\Mail\OrderSuccessCustomer;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Room;
 use App\Traits\WebResponseTrait;
 use Illuminate\Support\Carbon;
 use Mail;
@@ -26,6 +27,11 @@ class OrderRoomService
         $dataOrderDetail['customer_id'] = $request->input('customer_id');
 
         $orderDetail = OrderDetail::create($dataOrderDetail);
+
+        $room = Room::find($dataOrderDetail['room_id']);
+        $dataRoom['status'] = 1;
+        $room->update($dataRoom);
+
         Mail::to($data['customer_email'])->send(new OrderSuccessCustomer($data));
         return $this->returnSuccessWithRoute('customer.order.room.success', __('messages.data_create_success'));
     }
