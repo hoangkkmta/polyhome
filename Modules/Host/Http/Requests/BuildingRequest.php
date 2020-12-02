@@ -17,6 +17,10 @@ class BuildingRequest extends FormRequest
             'name' => [
                 'required'
             ],
+            'price' => [
+                'required',
+                'numeric',
+            ],
             'electricity_price' => [
                 'required',
                 'numeric',
@@ -77,6 +81,7 @@ class BuildingRequest extends FormRequest
         return [
             'name' => 'Tên số phòng',
             'image' => 'Hình ảnh',
+            'price' => 'Giá phòng',
             'electricity_price' => 'Giá điện',
             'water_price' => 'Giá nước',
             'internet_price' => 'Giá mạng internet',

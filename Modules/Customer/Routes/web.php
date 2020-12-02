@@ -26,7 +26,7 @@ Route::group([
     Route::get('mat-khau/dat-lai/{token}', 'ResetPasswordController@showResetForm')->name('password.showResetForm');
     Route::post('password/reset', 'ResetPasswordController@reset')->name('password.update');
     Route::get('dang-ky', 'RegisterController@showRegistrationForm')->name('formRegister');
-    Route::post('dang-ky', 'RegisterController@register')->name('register');
+    Route::post('dang-ky-tai-khoan', 'RegisterController@register')->name('register');
     Route::get('dang-ky-tai-khoan-moi', 'RegisterController@registerSuccess')->name('register.success');
 });
 

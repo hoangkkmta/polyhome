@@ -17,6 +17,7 @@ class Building extends Model
         'name',
         'slug',
         'image',
+        'price',
         'electricity_price',
         'water_price',
         'internet_price',

@@ -36,7 +36,13 @@
                             <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-
+                        <div class="form-group">
+                            <label>Giá phòng:</label>
+                            <input type="text" class="form-control" name="price" value="{{ old('price', $data->price) }}">
+                            @error('price')
+                            <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Ảnh đại diện:</label>
