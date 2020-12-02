@@ -29,7 +29,7 @@ class OrderRoomService
         $orderDetail = OrderDetail::create($dataOrderDetail);
 
         $room = Room::find($dataOrderDetail['room_id']);
-        $dataRoom['status'] = 1;
+        $dataRoom['status'] = 2;
         $room->update($dataRoom);
 
         Mail::to($data['customer_email'])->send(new OrderSuccessCustomer($data));

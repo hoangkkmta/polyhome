@@ -29,7 +29,7 @@
                         <div class="row">
                           <div class="col-12">
                             <h4>
-                              <i class="fas fa-globe"></i> AdminLTE, Inc.
+                              <i class="fas fa-globe"></i> POLYHOME
                               <small class="float-right">Date: 2/10/2014</small>
                             </h4>
                           </div>
@@ -103,15 +103,61 @@
                         <!-- /.row -->
                         <hr>
                         <!-- this row will not appear when printing -->
-                        <div class="row no-print">
+                        <div class="row">
                             <div class="col-12">
-                                <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                                <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
-                                    Payment
-                                </button>
-                                <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-                                    <i class="fas fa-download"></i> Generate PDF
-                                </button>
+                                <form action="{{ route('host.dat-lich-xem-phong.update', [$data->id]) }}" method="post">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="hidden" name="room_id" value="{{ $data->room_id }}">
+                                    <div class="form-group col-6">
+                                        <label>Phòng cho thuê:</label>
+                                        <input type="text" class="form-control" name="name" value="{{ old('name', $data->room->name ) }}" disabled>
+                                        @error('name')
+                                        <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label>Trạng thái cho thuê:</label>
+                                        <br>
+                                        <div class="icheck-primary d-inline">
+                                            <input
+                                                  type="radio"
+                                                  id="radioPrimary3"
+                                                  name="status"
+                                                  value="3"
+                                                  {{ ($data->room->status == 3) ? 'checked' : '' }}>
+                                            <label for="radioPrimary3">
+                                                Không cho thuê
+                                            </label>
+                                          </div>
+                                        <div class="icheck-primary d-inline">
+                                          <input
+                                                type="radio"
+                                                id="radioPrimary2"
+                                                name="status"
+                                                value="2"
+                                                {{ ($data->room->status == 2) ? 'checked' : '' }}>
+                                          <label for="radioPrimary2">
+                                              Chờ cho thuê
+                                          </label>
+                                        </div>
+                                        <div class="icheck-primary d-inline">
+                                          <input
+                                                type="radio"
+                                                id="radioPrimary1"
+                                                name="status"
+                                                value="1"
+                                                {{ ($data->room->status == 1) ? 'checked' : ''}}>
+                                          <label for="radioPrimary1">
+                                              Cho thuê
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <a href="{{ route('host.dat-lich-xem-phong.index') }}" class="btn btn-default mr-3">Trở lại</a>
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                       </div>

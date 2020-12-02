@@ -3,6 +3,7 @@ namespace App\Services\Host;
 
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Room;
 use App\Traits\WebResponseTrait;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Gate;
@@ -49,7 +50,19 @@ class OrderHostService
 
     public function update($request, $id)
     {
+        $order = Order::find($id);
+        $data = $request->all();
 
+        $room = Room::find($request->input('room_id'));
+        $dataRoom['status'] = $request->input('status');
+        $room->update($dataRoom);
+
+        if (empty($room)) {
+            return $this->returnFailedWithRoute('host.dat-lich-xem-phong.index', __('messages.data_update_failed'));
+        } else {
+            $room->update($data);
+            return $this->returnSuccessWithRoute('host.dat-lich-xem-phong.index', __('messages.data_update_success'));
+        }
     }
 
 }

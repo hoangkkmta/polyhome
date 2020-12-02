@@ -50,7 +50,7 @@ class RoomHostService
         // dd($data);
         $data['host_id'] = Auth::user()->id;
         $data['utility_id'] = json_encode($request->utility_id, JSON_UNESCAPED_UNICODE);
-        $data['status'] = 2;
+        $data['status'] = 3;
 
         $buildingId = $request->building_id;
         $building = Building::find($buildingId);

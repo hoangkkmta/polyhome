@@ -1,6 +1,6 @@
 @extends('customer::layouts.master')
 
-@section('title', '')
+@section('title', $data['building']->name)
 
 @push('css')
 <link rel="stylesheet" href="themes/bandonvn/assets/css/bootstrap7254.css?v=1602513406" type="text/css" />
@@ -207,13 +207,14 @@ style="clear: both">
                                     </div>
                                     <div class="box-room-grid">
                                         @foreach ($data['rooms'] as $room)
-                                            <span
-                                                onclick="viewRoom('30', '{{ $room->id }}', true)"
-                                                class="promotel-room-grid " id="room_{{ $room->id }}">
-                                                <a href="{{ route('customer.building.room.detail', [ 'slug' => $data['building']->slug, 'id' => $room->id]) }}" class="link-room">{{ $room->name }}</a>
-                                            </span>
+                                            @if ($room->status !== 1)
+                                                <span
+                                                    onclick="viewRoom('30', '{{ $room->id }}', true)"
+                                                    class="promotel-room-grid " id="room_{{ $room->id }}">
+                                                    <a href="{{ route('customer.building.room.detail', [ 'slug' => $data['building']->slug, 'id' => $room->id]) }}" class="link-room">{{ $room->name }}</a>
+                                                </span>       
+                                            @endif
                                         @endforeach
-
                                     </div>
                                 </div>
                                 <div class="box-room-convenient" id="room_convenient_482">

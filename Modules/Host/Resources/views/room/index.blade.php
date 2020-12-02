@@ -72,11 +72,13 @@
                                             </td>
                                             <td>
                                                 @if ($row->status == 2)
-                                                    <b class="text-warning">Còn phòng</b>
+                                                    <b class="text-warning">Đang chờ cho thuê</b>
                                                 @elseif($row->status == 1)
                                                     <b class="text-success">Đã cho thuê</b>
+                                                @elseif($row->status == 3)
+                                                    <b class="text-success">Còn phòng</b>
                                                 @else
-                                                <b class="text-danger">Hết phòng</b>
+                                                <b class="text-danger">Còn phòng</b>
                                                 @endif
                                             </td>
                                             <td>
