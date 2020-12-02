@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 use Mail;
 
 class RegisterController extends Controller
@@ -88,8 +89,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'status' => STATUS_ACCOUNT_CUSTOMER_ACTIVE,
         ]);
-
-        Mail::to($data['email'])->send(new RegisterCustomer($user));
+        try {
+            Mail::to($data['email'])->send(new RegisterCustomer($user));
+        } catch (\Exception $ex) {
+            Log::error($ex);
+        }
+        
 
         return $user;
 

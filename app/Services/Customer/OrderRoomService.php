@@ -8,6 +8,7 @@ use App\Models\Room;
 use App\Traits\WebResponseTrait;
 use Illuminate\Support\Carbon;
 use Mail;
+use Illuminate\Support\Facades\Log;
 
 class OrderRoomService
 {
@@ -32,7 +33,12 @@ class OrderRoomService
         $dataRoom['status'] = 2;
         $room->update($dataRoom);
 
-        Mail::to($data['customer_email'])->send(new OrderSuccessCustomer($data));
+        try {
+            Mail::to($data['customer_email'])->send(new OrderSuccessCustomer($data));
+        } catch (\Exception $ex) {
+            Log::error($ex);
+        }
+
         return $this->returnSuccessWithRoute('customer.order.room.success', __('messages.data_create_success'));
     }
 

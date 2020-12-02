@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
 
 class CustomersService
 {
@@ -44,7 +45,12 @@ class CustomersService
         $data['password'] = null;
         Customer::create($data);
         // dd($customer);
-        Mail::to($email)->send(new MailCreateCustomer( $data['registration_token']));
+        try {
+            Mail::to($email)->send(new MailCreateCustomer( $data['registration_token']));
+        } catch (\Exception $ex) {
+            Log::error($ex);
+        }
+        
         return redirect()->route('admin.khach-hang.index');
     }
 
