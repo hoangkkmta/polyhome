@@ -212,7 +212,7 @@ style="clear: both">
                                                     onclick="viewRoom('30', '{{ $room->id }}', true)"
                                                     class="promotel-room-grid " id="room_{{ $room->id }}">
                                                     <a href="{{ route('customer.building.room.detail', [ 'slug' => $data['building']->slug, 'id' => $room->id]) }}" class="link-room">{{ $room->name }}</a>
-                                                </span>       
+                                                </span>
                                             @endif
                                         @endforeach
                                     </div>
@@ -450,21 +450,23 @@ style="clear: both">
                 <div class="btn-group">
                     <button class="btn btn-picker-date">Đặt lịch xem phòng</button>
                 </div>
-                <div class="btn-group">
-                    <button class="btn btn-book-room">
-                        <svg version="1.1" viewBox="0 0 20 20" class="mr--6 svg-icon svg-fill"
-                            style="width: 20px; height: 20px;margin-right: 5px;vertical-align: middle">
-                            <g fill="none" fill-rule="evenodd" transform="translate(-2 -2)">
-                                <path pid="0" d="M0 0h24v24H0z"></path>
-                                <circle pid="1" cx="12" cy="12" r="10" fill="#FFF" opacity=".3"></circle>
-                                <path pid="2" fill="#FFF"
-                                    d="M12.42 17.158l3.037-6.073a.75.75 0 0 0-.67-1.085H12V7.177a.75.75 0 0 0-1.42-.335l-3.037 6.073A.75.75 0 0 0 8.213 14H11v2.823a.75.75 0 0 0 1.42.335z">
-                                </path>
-                            </g>
-                        </svg>
-                        <span><a href="{{ route('customer.message', $data['building']->host_id ) }}" style="color: #fff">Nhắn tin với chủ nhà</a></span>
-                    </button>
-                </div>
+                <a href="{{ route('customer.message', $data['building']->host_id ) }}" style="color: #fff">
+                    <div class="btn-group">
+                        <button class="btn btn-book-room">
+                            <svg version="1.1" viewBox="0 0 20 20" class="mr--6 svg-icon svg-fill"
+                                style="width: 20px; height: 20px;margin-right: 5px;vertical-align: middle">
+                                <g fill="none" fill-rule="evenodd" transform="translate(-2 -2)">
+                                    <path pid="0" d="M0 0h24v24H0z"></path>
+                                    <circle pid="1" cx="12" cy="12" r="10" fill="#FFF" opacity=".3"></circle>
+                                    <path pid="2" fill="#FFF"
+                                        d="M12.42 17.158l3.037-6.073a.75.75 0 0 0-.67-1.085H12V7.177a.75.75 0 0 0-1.42-.335l-3.037 6.073A.75.75 0 0 0 8.213 14H11v2.823a.75.75 0 0 0 1.42.335z">
+                                    </path>
+                                </g>
+                            </svg>
+                            <span>Nhắn tin với chủ nhà</span>
+                        </button>
+                    </div>
+                </a>
                 <br>
                 <hr>
                 <div class="text-center">

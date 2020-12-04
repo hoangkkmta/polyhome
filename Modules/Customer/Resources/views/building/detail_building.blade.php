@@ -211,7 +211,7 @@ style="clear: both">
                                                     onclick="viewRoom('30', '{{ $room->id }}', true)"
                                                     class="promotel-room-grid " id="room_{{ $room->id }}">
                                                         <a href="{{ route('customer.building.room.detail', [ 'slug' => $data['building']->slug, 'id' => $room->id]) }}" class="link-room">{{ $room->name }}</a>
-                                                </span> 
+                                                </span>
                                             @endif
                                         @endforeach
 
@@ -450,6 +450,7 @@ style="clear: both">
                 <div class="btn-group">
                     <button class="btn btn-picker-date">Đặt lịch xem phòng</button>
                 </div>
+                <a href="{{ route('customer.message', $data['building']->host_id ) }}">
                 <div class="btn-group">
                     <button class="btn btn-book-room">
                         <svg version="1.1" viewBox="0 0 20 20" class="mr--6 svg-icon svg-fill"
@@ -462,9 +463,10 @@ style="clear: both">
                                 </path>
                             </g>
                         </svg>
-                        <span><a href="{{ route('customer.message', $data['building']->host_id ) }}" style="color: #fff">Nhắn tin với chủ nhà</a></span>
+                        <span>Nhắn tin với chủ nhà</span>
                     </button>
                 </div>
+                </a>
                 <hr>
                 <div class="text-center">
                     <ul class="flat-socials">
