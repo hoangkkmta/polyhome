@@ -16,9 +16,9 @@ class RegisterCustomer extends Mailable
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($token)
     {
-        $this->user = $user;
+        $this->url = url('/').'/dang-ky/xac-nhan/'.$token;
     }
 
     /**
@@ -29,6 +29,6 @@ class RegisterCustomer extends Mailable
     public function build()
     {
         return $this->subject('Đăng ký tài khoản mới')
-                    ->view('customer::mail.register_customer', ['user' => $this->user]);
+                    ->view('customer::mail.register_customer', ['url' => $this->url]);
     }
 }
