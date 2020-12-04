@@ -20,7 +20,10 @@ class BuildingHostService
             if ($request->name) $query->where('name', 'like', '%'.$request->name.'%');
         });
 
-        $data = $builder->orderBy('created_at', 'desc')->get();
+        $data = $builder
+        ->where('host_id', Auth::user()->id)
+        ->orderBy('created_at', 'desc')
+        ->get();
 
         // $data->appends(request()->query());
 
