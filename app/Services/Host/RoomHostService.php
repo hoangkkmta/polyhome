@@ -98,4 +98,27 @@ class RoomHostService
         }
     }
 
+    public function delete($id)
+    {
+        Room::where('id', $id)->delete();
+        return $this->returnSuccessWithRoute('host.phong-cho-thue.index', __('messages.data_delete_success'));
+    }
+
+    public function listSoftDelete()
+    {
+        $data = Room::onlyTrashed()->get();
+        return view(
+            'host::room.list_soft_delete',
+            [
+                'data' => $data
+            ]
+        );
+    }
+
+    public function restore($id)
+    {
+        Room::withTrashed()->where('id', $id)->restore();
+        return $this->returnSuccessWithRoute('host.phong-cho-thue.listSoftDelete', __('messages.data_restore_success'));
+    }
+
 }

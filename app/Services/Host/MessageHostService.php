@@ -16,7 +16,9 @@ class MessageHostService
             if ($request->message) $query->where('message', 'like', '%'.$request->message.'%');
         });
 
-        $data = $builder->orderBy('created_at', 'desc')->get();
+        $data = $builder
+        ->where('host_id', Auth::user()->id)
+        ->orderBy('created_at', 'desc')->get();
 
         // $data->appends(request()->query());
 

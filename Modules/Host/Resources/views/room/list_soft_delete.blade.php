@@ -52,7 +52,8 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Tên </th>
+                                        <th>Tên phòng</th>
+                                        <th>Nhà</th>
                                         <th>Trạng thái</th>
                                         <th width="10%">Action</th>
                                     </tr>
@@ -67,15 +68,22 @@
                                                 {{ $row->name }}
                                             </td>
                                             <td>
-                                                @if ($row->status == STATUS_POST_DRAFT)
-                                                    <b class="text-warning">Chưa công khai</b>
-                                                @elseif($row->status == STATUS_POST_PUBLIC)
-                                                    <b class="text-success">Công khai</b>
+                                                {{ $row->building->name }}
+                                            </td>
+                                            <td>
+                                                @if ($row->status == 2)
+                                                    <b class="text-warning">Đang chờ cho thuê</b>
+                                                @elseif($row->status == 1)
+                                                    <b class="text-success">Đã cho thuê</b>
+                                                @elseif($row->status == 3)
+                                                    <b class="text-success">Còn phòng</b>
+                                                @else
+                                                <b class="text-danger">Còn phòng</b>
                                                 @endif
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ route('admin.quan.restore', [$row->id]) }}" class="btn btn-app text-success">
+                                                    <a href="{{ route('host.phong-cho-thue.restore', [$row->id]) }}" class="btn btn-app text-success">
                                                         <i class="fas fa-trash-restore"></i> Khôi phục
                                                     </a>
                                                 </div>

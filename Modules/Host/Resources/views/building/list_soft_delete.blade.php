@@ -53,7 +53,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Tên </th>
-                                        <th>Trạng thái</th>
+                                        <th>Số phòng</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
@@ -67,15 +67,11 @@
                                                 {{ $row->name }}
                                             </td>
                                             <td>
-                                                @if ($row->status == STATUS_POST_DRAFT)
-                                                    <b class="text-warning">Chưa công khai</b>
-                                                @elseif($row->status == STATUS_POST_PUBLIC)
-                                                    <b class="text-success">Công khai</b>
-                                                @endif
+                                                {{ $row->room->count() }}
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ route('admin.quan.restore', [$row->id]) }}" class="btn btn-app text-success">
+                                                    <a href="{{ route('host.nha-cho-thue.restore', [$row->id]) }}" class="btn btn-app text-success">
                                                         <i class="fas fa-trash-restore"></i> Khôi phục
                                                     </a>
                                                 </div>

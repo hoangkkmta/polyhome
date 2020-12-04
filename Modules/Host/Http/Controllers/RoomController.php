@@ -83,6 +83,16 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->roomHostService->delete($id);
+    }
+
+    public function listSoftDelete()
+    {
+        return $this->roomHostService->listSoftDelete();
+    }
+
+    public function restore($id)
+    {
+        return $this->roomHostService->restore($id);
     }
 }

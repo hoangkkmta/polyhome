@@ -83,6 +83,16 @@ class BuildingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->buildingHostService->delete($id);
+    }
+
+    public function listSoftDelete()
+    {
+        return $this->buildingHostService->listSoftDelete();
+    }
+
+    public function restore($id)
+    {
+        return $this->buildingHostService->restore($id);
     }
 }
