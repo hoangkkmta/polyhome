@@ -63,16 +63,16 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            // 'password' => ['required', 'string', 'min:6', 'confirmed'],
         ], [
             'required' => ':attribute không được để trống',
             'email' => ':attribute không đúng định dạng email',
             'unique' => ':attribute đã tồn tại',
             'min' => ':attribute lớn hơn 6 ký tự',
-            'confirmed' => ':attribute chưa khớp'
+            // 'confirmed' => ':attribute chưa khớp'
         ], [
             'email' => 'Email',
-            'password' => 'Mật khẩu',
+            // 'password' => 'Mật khẩu',
             'name' => 'Họ tên'
         ]);
     }
@@ -88,7 +88,7 @@ class RegisterController extends Controller
         $user = Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => null,
             'status' => STATUS_ACCOUNT_CUSTOMER_REGISTER,
             'registration_token' => Str::random(60),
             'send_email_at' => Carbon::now(),

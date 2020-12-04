@@ -84,7 +84,7 @@
                                 </div>
                                 @enderror
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label>Mật khẩu</label>
                                     <input class="form-control" type="password" name="password" placeholder="">
                                 </div>
@@ -106,7 +106,7 @@
                                         {{ $message }}</i>
                                     </label>
                                 </div>
-                                @enderror
+                                @enderror --}}
 
                             </div>
                             <div class="col-lg-12 d-flex justify-content-center">
