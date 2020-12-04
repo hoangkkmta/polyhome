@@ -5,7 +5,7 @@
 @section('content')
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ route('customer.home') }}"><b>BEEHAIR</b>.VN</a>
+            <a href="{{ route('customer.home') }}"><b>POLYHOME</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
