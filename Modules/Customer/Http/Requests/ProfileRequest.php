@@ -26,7 +26,7 @@ class ProfileRequest extends FormRequest
                 'email',
             ],
             'avatar' => [
-                'image',
+                'required',
             ],
             'address' => [
                 'required',
