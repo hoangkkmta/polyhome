@@ -43,7 +43,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Danh sách - @yield('title')</h3>
-                            <a href="{{ route('admin.quan.create') }}" class="btn btn-primary float-right">Thêm
+                            <a href="{{ route('admin.nha-cho-thue.create') }}" class="btn btn-primary float-right">Thêm
                                 mới</a>
                         </div>
                         <!-- /.card-header -->
@@ -75,7 +75,7 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ route('admin.quan.restore', [$row->id]) }}" class="btn btn-app text-success">
+                                                    <a href="{{ route('admin.nha-cho-thue.restore', [$row->id]) }}" class="btn btn-app text-success">
                                                         <i class="fas fa-trash-restore"></i> Khôi phục
                                                     </a>
                                                 </div>
