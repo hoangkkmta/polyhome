@@ -66,12 +66,15 @@ class BuildingService
         $dataRelation['district'] = District::all();
         $dataRelation['school'] = School::all();
         $dataRelation['utility'] = Utility::where('type', 'building')->get();
+        $arrUtility = json_decode($data->utility_id);
+
         return view(
             'admin::building.edit',
             [
                 'data' => $data,
                 'dataRelation' => $dataRelation,
                 'image' => $image,
+                'arrUtility' => $arrUtility,
             ]
         );
     }

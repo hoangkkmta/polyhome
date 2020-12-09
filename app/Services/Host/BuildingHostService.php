@@ -94,6 +94,8 @@ class BuildingHostService
         $dataRelation['district'] = District::all();
         $dataRelation['school'] = School::all();
         $dataRelation['utility'] = Utility::where('type', 'building')->get();
+
+        $arrUtility = json_decode($data->utility_id);
         // dd($dataRelation['utility']);
         return view(
             'host::building.edit',
@@ -101,6 +103,7 @@ class BuildingHostService
                 'data' => $data,
                 'image' => $image,
                 'dataRelation' => $dataRelation,
+                'arrUtility' => $arrUtility
             ]
         );
     }

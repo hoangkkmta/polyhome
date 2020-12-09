@@ -83,11 +83,10 @@
                                 <div class="select2-purple">
                                     <select name="utility_id[]" id="" class="select2" multiple="multiple" data-placeholder="Chọn" data-dropdown-css-class="select2-purple" style="width: 100%;">
                                         @foreach ($dataRelation['utility'] as $id => $utility)
-                                        <option
-                                            value="{{$utility->id}}"
-                                            @if ($utility->id == $data->utility_id)
-                                                selected
-                                            @endif>
+                                        <?php
+                                            $selected = (in_array($utility->id, $arrUtility)) ? 'selected' : '';
+                                        ?>
+                                        <option value="{{$utility->id}}" {{ $selected }}>
                                             {{$utility->name}}
                                         </option>
                                         @endforeach

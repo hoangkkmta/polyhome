@@ -73,12 +73,15 @@ class RoomHostService
         $dataRelation['building'] = Building::where('host_id', Auth::user()->id)->get();
         $dataRelation['room_category'] = RoomCategory::all();
         $dataRelation['utility'] = Utility::where('type', 'room')->get();
-        // dd($dataRelation['utility']);
+
+        $arrUtility = json_decode($data->utility_id);
+        // dd($utility);
         return view(
             'host::room.edit',
             [
                 'data' => $data,
                 'dataRelation' => $dataRelation,
+                'arrUtility' => $arrUtility
             ]
         );
     }
