@@ -15,8 +15,8 @@ class BuildingSeeder extends Seeder
         $datas = [
             [
                 'host_id' => '1',
-                'name' => 'Số 12, Ngõ 88 Trần Duy Hưng',
-                'slug' => 'so-12-ngo-88-tran-duy-hung',
+                'name' => 'Số 12, Ngõ 88 Trần Duy Hưng 1',
+                'slug' => 'so-12-ngo-88-tran-duy-hung-1',
                 'image' => '["anh-1.jpg","anh-2.jpg","anh-3.jpg","anh-4.jpg"]',
                 'electricity_price' => '3000',
                 'water_price' => '15000',
@@ -33,8 +33,8 @@ class BuildingSeeder extends Seeder
             ],
             [
                 'host_id' => '1',
-                'name' => 'Số 88, Ngõ 317 Tây Sơn',
-                'slug' => 'so-80-ngo-317-tay-son',
+                'name' => 'Số 88, Ngõ 317 Tây Sơn 1',
+                'slug' => 'so-80-ngo-317-tay-son-1',
                 'image' => '["anh-1.jpg","anh-2.jpg","anh-3.jpg","anh-4.jpg"]',
                 'electricity_price' => '3000',
                 'water_price' => '15000',
@@ -51,8 +51,8 @@ class BuildingSeeder extends Seeder
             ],
             [
                 'host_id' => '1',
-                'name' => 'Số 12, Ngõ 88 Trần Duy Hưng',
-                'slug' => 'so-12-ngo-88-tran-duy-hung',
+                'name' => 'Số 12, Ngõ 88 Trần Duy Hưng 2',
+                'slug' => 'so-12-ngo-88-tran-duy-hung-2',
                 'image' => '["anh-1.jpg","anh-2.jpg","anh-3.jpg","anh-4.jpg"]',
                 'electricity_price' => '3000',
                 'water_price' => '15000',
@@ -69,8 +69,8 @@ class BuildingSeeder extends Seeder
             ],
             [
                 'host_id' => '1',
-                'name' => 'Số 88, Ngõ 317 Tây Sơn',
-                'slug' => 'so-80-ngo-317-tay-son',
+                'name' => 'Số 88, Ngõ 317 Tây Sơn 2',
+                'slug' => 'so-80-ngo-317-tay-son-2',
                 'image' => '["anh-1.jpg","anh-2.jpg","anh-3.jpg","anh-4.jpg"]',
                 'electricity_price' => '3000',
                 'water_price' => '15000',

@@ -24,8 +24,8 @@ class CreateRoomsTable extends Migration
             $table->integer('acreage');
             $table->integer('max_people');
             $table->integer('floors');
-            $table->date('date_start');
-            $table->date('date_end');
+            $table->date('date_start')->nullable();
+            $table->date('date_end')->nullable();
             $table->integer('status')->nullable();
             $table->integer('active')->nullable();
             $table->timestamps();
