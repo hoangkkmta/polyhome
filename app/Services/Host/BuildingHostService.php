@@ -4,6 +4,7 @@ namespace App\Services\Host;
 use App\Traits\WebResponseTrait;
 use App\Models\Building;
 use App\Models\District;
+use App\Models\Room;
 use App\Models\School;
 use App\Models\Utility;
 use Auth;
@@ -29,6 +30,19 @@ class BuildingHostService
 
         return view(
             'host::building.index',
+            ['data' => $data]
+        );
+    }
+
+    public function listRoom($id)
+    {
+        $data = Room::where('building_id', $id)
+                ->where('host_id', Auth::user()->id)
+                ->orderBy('created_at', 'desc')
+                ->get();
+
+        return view(
+            'host::building.list_room',
             ['data' => $data]
         );
     }

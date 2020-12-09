@@ -1,6 +1,6 @@
 @extends('host::layouts.master')
 
-@section('title', 'Quản lý khu vực quận')
+@section('title', 'Quản lý phòng cho thuê')
 
     @push('css')
         <!-- Font Awesome -->
@@ -43,7 +43,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Danh sách - @yield('title')</h3>
-                            <a href="{{ route('host.nha-cho-thue.create') }}" class="btn btn-primary float-right">Thêm
+                            <a href="{{ route('host.phong-cho-thue.create') }}" class="btn btn-primary float-right">Thêm
                                 mới</a>
                         </div>
                         <!-- /.card-header -->
@@ -52,8 +52,9 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Tên </th>
-                                        <th>Số phòng</th>
+                                        <th>Tên phòng</th>
+                                        <th>Nhà</th>
+                                        <th>Trạng thái</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
@@ -65,19 +66,28 @@
                                             </td>
                                             <td>
                                                 {{ $row->name }}
-                                                <br>
-                                                <a href="{{ route('host.nha-cho-thue.listRoom', [$row->id]) }}">Xem phòng</a>
                                             </td>
                                             <td>
-                                                {{ $row->room->count() }}
+                                                {{ $row->building->name }}
+                                            </td>
+                                            <td>
+                                                @if ($row->status == 2)
+                                                    <b class="text-warning">Đang chờ cho thuê</b>
+                                                @elseif($row->status == 1)
+                                                    <b class="text-success">Đã cho thuê</b>
+                                                @elseif($row->status == 3)
+                                                    <b class="text-success">Còn phòng</b>
+                                                @else
+                                                <b class="text-danger">Còn phòng</b>
+                                                @endif
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ route('host.nha-cho-thue.show', [$row->id]) }}" class="btn btn-app">
+                                                    <a href="{{ route('host.phong-cho-thue.show', [$row->id]) }}" class="btn btn-app">
                                                         <i class="fas fa-edit "></i> Cập nhật
                                                     </a>
                                                     <form
-                                                        action="{{ route('host.nha-cho-thue.destroy', [$row->id]) }}"
+                                                        action="{{ route('host.phong-cho-thue.destroy', [$row->id]) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')

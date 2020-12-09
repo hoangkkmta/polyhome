@@ -26,6 +26,11 @@ class BuildingController extends Controller
         return $this->buildingService->index($request);
     }
 
+    public function listRoom($id)
+    {
+        return $this->buildingService->listRoom($id);
+    }
+
     /**
      * Show the form for creating a new resource.
      * @return Renderable

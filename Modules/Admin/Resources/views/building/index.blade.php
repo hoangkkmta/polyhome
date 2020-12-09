@@ -60,6 +60,8 @@
                                             </td>
                                             <td>
                                                 {{ $row->name }}
+                                                <br>
+                                                <a href="{{ route('admin.nha-cho-thue.listRoom', [$row->id]) }}">Xem phòng</a>
                                             </td>
                                             <td>
                                                 {{ $row->host->name }}

@@ -6,8 +6,10 @@ use App\Traits\WebResponseTrait;
 use App\Models\District;
 use App\Models\School;
 use App\Models\Utility;
+use App\Models\Room;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
 
 class BuildingService
 {
@@ -25,6 +27,19 @@ class BuildingService
 
         return view(
             'admin::building.index',
+            ['data' => $data]
+        );
+    }
+
+    public function listRoom($id)
+    {
+        $data = Room::where('building_id', $id)
+                ->where('host_id', Auth::user()->id)
+                ->orderBy('created_at', 'desc')
+                ->get();
+
+        return view(
+            'admin::building.list_room',
             ['data' => $data]
         );
     }

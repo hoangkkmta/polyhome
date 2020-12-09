@@ -47,6 +47,7 @@ Route::group([
     Route::get('phong-cho-thue/khoi-phuc/{id}', 'RoomController@restore')->name('phong-cho-thue.restore');
     // page curd building
     Route::resource('nha-cho-thue', 'BuildingController');
+    Route::get('phong-nha-cho-thue/{id}', 'BuildingController@listRoom')->name('nha-cho-thue.listRoom');
     Route::get('nha-cho-thue-thung-rac', 'BuildingController@listSoftDelete')->name('nha-cho-thue.listSoftDelete');
     Route::get('nha-cho-thue/khoi-phuc/{id}', 'BuildingController@restore')->name('nha-cho-thue.restore');
     // page show order and order detail
