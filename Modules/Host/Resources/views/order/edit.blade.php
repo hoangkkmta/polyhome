@@ -103,93 +103,93 @@
                         <!-- /.row -->
                         <hr>
                         <!-- this row will not appear when printing -->
-                        <div class="row">
-                            <div class="col-6">
-                                <form action="{{ route('host.dat-lich-xem-phong.update', [$data->id]) }}" method="post">
-                                    @csrf
-                                    @method('PUT')
-                                    <input type="hidden" name="room_id" value="{{ $data->room_id }}">
-                                    <div class="form-group">
-                                        <label>Phòng cho thuê:</label>
-                                        <input type="text" class="form-control" name="name" value="{{ old('name', $data->room->name ) }}" disabled>
-                                        @error('name')
-                                        <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Trạng thái cho thuê:</label>
-                                        <br>
-                                        <div class="icheck-primary d-inline">
+                        <form action="{{ route('host.dat-lich-xem-phong.update', [$data->id]) }}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <div class="row">
+                                <div class="col-6">
+                                    
+
+                                        <input type="hidden" name="room_id" value="{{ $data->room_id }}">
+                                        <div class="form-group">
+                                            <label>Phòng cho thuê:</label>
+                                            <input type="text" class="form-control" name="name" value="{{ old('name', $data->room->name ) }}" disabled>
+                                            @error('name')
+                                            <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Trạng thái cho thuê:</label>
+                                            <br>
+                                            <div class="icheck-primary d-inline">
+                                                <input
+                                                    type="radio"
+                                                    id="radioPrimary3"
+                                                    name="status"
+                                                    value="3"
+                                                    {{ ($data->room->status == 3) ? 'checked' : '' }}>
+                                                <label for="radioPrimary3">
+                                                    Không cho thuê
+                                                </label>
+                                            </div>
+                                            <div class="icheck-primary d-inline">
                                             <input
-                                                  type="radio"
-                                                  id="radioPrimary3"
-                                                  name="status"
-                                                  value="3"
-                                                  {{ ($data->room->status == 3) ? 'checked' : '' }}>
-                                            <label for="radioPrimary3">
-                                                Không cho thuê
+                                                    type="radio"
+                                                    id="radioPrimary2"
+                                                    name="status"
+                                                    value="2"
+                                                    {{ ($data->room->status == 2) ? 'checked' : '' }}>
+                                            <label for="radioPrimary2">
+                                                Chờ cho thuê
                                             </label>
-                                          </div>
-                                        <div class="icheck-primary d-inline">
-                                          <input
-                                                type="radio"
-                                                id="radioPrimary2"
-                                                name="status"
-                                                value="2"
-                                                {{ ($data->room->status == 2) ? 'checked' : '' }}>
-                                          <label for="radioPrimary2">
-                                              Chờ cho thuê
-                                          </label>
-                                        </div>
-                                        <div class="icheck-primary d-inline">
-                                          <input
-                                                type="radio"
-                                                id="radioPrimary1"
-                                                name="status"
-                                                value="1"
-                                                {{ ($data->room->status == 1) ? 'checked' : ''}}>
-                                          <label for="radioPrimary1">
-                                              Cho thuê
-                                          </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <a href="{{ route('host.dat-lich-xem-phong.index') }}" class="btn btn-default mr-3">Trở lại</a>
-                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-6">
-                                <div class="bootstrap-timepicker">
-                                    <div class="form-group">
-                                        <label>Thời gian bắt đầu:</label>
-
-                                        <div class="input-group date" id="time-start" data-target-input="nearest">
-                                            <input type="text" name="time_start" class="form-control datetimepicker-input" data-target="#time-start" value="{{ old('time_start') }}" />
-                                            <div class="input-group-append" data-target="#time-start" data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                            </div>
+                                            <div class="icheck-primary d-inline">
+                                            <input
+                                                    type="radio"
+                                                    id="radioPrimary1"
+                                                    name="status"
+                                                    value="1"
+                                                    {{ ($data->room->status == 1) ? 'checked' : ''}}>
+                                            <label for="radioPrimary1">
+                                                Cho thuê
+                                            </label>
                                             </div>
                                         </div>
-                                        <!-- /.input group -->
-                                    </div>
-                                    <!-- /.form group -->
-                                </div>
-                                <div class="bootstrap-timepicker">
-                                    <div class="form-group">
-                                        <label>Thời gian kết thúc:</label>
-
-                                        <div class="input-group date" id="time-end" data-target-input="nearest">
-                                            <input type="text" name="time_end" class="form-control datetimepicker-input" data-target="#time-end" value="{{ old('time_end') }}" />
-                                            <div class="input-group-append" data-target="#time-end" data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
-                                            </div>
+                                        <div class="form-group">
+                                            <a href="{{ route('host.dat-lich-xem-phong.index') }}" class="btn btn-default mr-3">Trở lại</a>
+                                            <button type="submit" class="btn btn-primary">Cập nhật</button>
                                         </div>
-                                        <!-- /.input group -->
+                                </div>
+                                <div class="col-6">
+                                    <div class="bootstrap-timepicker">
+                                        <div class="form-group">
+                                            <label>Thời gian bắt đầu:</label>
+                                            <div class="input-group date" id="date-start" data-target-input="nearest">
+                                                <input type="text" name="date_start" class="form-control datetimepicker-input" data-target="#date-start" value="{{ old('date_start') }}" />
+                                                <div class="input-group-append" data-target="#date-start" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                                </div>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                        <!-- /.form group -->
                                     </div>
-                                    <!-- /.form group -->
+                                    <div class="bootstrap-timepicker">
+                                        <div class="form-group">
+                                            <label>Thời gian kết thúc:</label>
+                                            <div class="input-group date" id="date-end" data-target-input="nearest">
+                                                <input type="text" name="date_end" class="form-control datetimepicker-input" data-target="#date-end" value="{{ old('date_end') }}" />
+                                                <div class="input-group-append" data-target="#date-end" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                                </div>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+                                        <!-- /.form group -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                       </div>
                 </div>
             </div>
@@ -211,13 +211,13 @@
             })
 
             //Timepicker
-            $('#time-start').datetimepicker({
+            $('#date-start').datetimepicker({
                 pickTime: true,
-                format: 'DD-MM-YYYY',
+                format: 'YYYY-MM-DD',
             })
-            $('#time-end').datetimepicker({
+            $('#date-end').datetimepicker({
                 pickTime: true,
-                format: 'DD-MM-YYYY',
+                format: 'YYYY-MM-DD',
             })
         })
     </script>

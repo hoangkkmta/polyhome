@@ -55,6 +55,8 @@ class OrderHostService
 
         $room = Room::find($request->input('room_id'));
         $dataRoom['status'] = $request->input('status');
+        $dataRoom['date_start'] = $request->input('date_start');
+        $dataRoom['date_end'] = $request->input('date_end');
         $room->update($dataRoom);
 
         if (empty($room)) {

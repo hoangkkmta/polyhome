@@ -69,7 +69,8 @@
                                                 @if ($row->status == 2)
                                                     <b class="text-warning">Còn phòng</b>
                                                 @elseif($row->status == 1)
-                                                    <b class="text-success">Đã cho thuê</b>
+                                                    <b class="text-success">Đã cho thuê</b><br>
+                                                    <b class="text-success">Thời gian thuê từ {{ $row->date_start }} đến {{ $row->date_end }}</b>
                                                 @else
                                                 <b class="text-danger">Hết phòng</b>
                                                 @endif

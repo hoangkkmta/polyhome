@@ -182,7 +182,11 @@
                                     <select name="utility_id[]" id="" class="select2" multiple="multiple" data-placeholder="Chọn" data-dropdown-css-class="select2-purple" style="width: 100%;">
                                         @foreach ($dataRelation['utility'] as $id => $utility)
                                         <?php
-                                            $selected = (in_array($utility->id, $arrUtility)) ? 'selected' : '';
+                                            if (!empty($arrUtility)) {
+                                                $selected = (in_array($utility->id, $arrUtility)) ? 'selected' : '';
+                                            } else {
+                                                $selected = '';
+                                            }
                                         ?>
                                         <option value="{{$utility->id}}" {{ $selected }}>
                                             {{$utility->name}}

@@ -22,6 +22,8 @@ class Room extends Model
         'acreage',
         'max_people',
         'floors',
+        'date_start',
+        'date_end',
         'status',
         'active',
     ];
@@ -29,6 +31,11 @@ class Room extends Model
     public function building()
     {
         return $this->belongsTo(Building::class, 'building_id', 'id');
+    }
+
+    public function order_detail()
+    {
+        return $this->hasMany(OrderDetail::class, 'room_id');
     }
 
     public function room_category()
