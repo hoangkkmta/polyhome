@@ -30,21 +30,52 @@
                         <input type="hidden" name="id" value="{{ $data->id }}">
                         <input type="hidden" name="host_id" value="{{ $data->host_id }}">
                         <div class="form-group">
-                            <label>Tên:</label>
+                            <label>Tên số nhà:</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name', $data->name) }}">
                             @error('name')
                             <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Ảnh đại diện:</label>
-                            <input id="img" type="file" class="form-control" name="image" onchange="changeImg(this)" value="{{ old('image', $data->image) }}">
-                            <img id="image" class="img-thumbnail img-fluid mt-3" src="{!! url('storage/'.  $data->image) !!}">
-                            @error('image')
+                            <label>Giá phòng:</label>
+                            <input type="number" class="form-control" name="price" value="{{ old('price', $data->price) }}">
+                            @error('price')
                             <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>Ảnh đại diện:</label>
+                                <input id="img" type="file" class="form-control" name="image[]" onchange="changeImg(this)" value="{{ old('image') }}">
+                                <img id="image" class="img-thumbnail img-fluid mt-3" src="{!! url('building/'.  $image[0]) !!}">
+                                @error('image')
+                                <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Ảnh đại diện:</label>
+                                <input id="img-2" type="file" class="form-control" name="image[]" onchange="changeImg2(this)" value="{{ old('image') }}">
+                                <img id="image-2" class="img-thumbnail img-fluid mt-3" src="{!! url('building/'.  $image[1]) !!}">
+                                @error('image')
+                                <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Ảnh đại diện:</label>
+                                <input id="img-3" type="file" class="form-control" name="image[]" onchange="changeImg3(this)" value="{{ old('image') }}">
+                                <img id="image-3" class="img-thumbnail img-fluid mt-3" src="{!! url('building/'.  $image[3]) !!}">
+                                @error('image')
+                                <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Ảnh đại diện:</label>
+                                <input id="img-4" type="file" class="form-control" name="image[]" onchange="changeImg4(this)" value="{{ old('image') }}">
+                                <img id="image-4" class="img-thumbnail img-fluid mt-3" src="{!! url('building/'.  $image[3]) !!}">
+                                @error('image')
+                                <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label>Giá điện:</label>
                                 <input type="number" class="form-control" name="electricity_price" value="{{ old('electricity_price', $data->electricity_price) }}">

@@ -47,7 +47,8 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Tên </th>
+                                        <th>Tên nhà </th>
+                                        <th>Chủ nhà</th>
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>
@@ -59,6 +60,9 @@
                                             </td>
                                             <td>
                                                 {{ $row->name }}
+                                            </td>
+                                            <td>
+                                                {{ $row->host->name }}
                                             </td>
                                             <td>
                                                 <div class="btn-group">

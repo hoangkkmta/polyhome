@@ -38,7 +38,13 @@ class Building extends Model
         'rank',
     ];
 
-    public function district(){
+    public function host()
+    {
+        return $this->belongsTo(Host::class, 'host_id', 'id');
+    }
+
+    public function district()
+    {
         return $this->belongsTo(District::class, 'district_id', 'id');
     }
 

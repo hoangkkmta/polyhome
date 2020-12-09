@@ -45,6 +45,9 @@ class BuildingService
     public function show($id)
     {
         $data = Building::find($id);
+        $image = json_decode($data->image);
+
+
         $dataRelation['district'] = District::all();
         $dataRelation['school'] = School::all();
         $dataRelation['utility'] = Utility::where('type', 'building')->get();
@@ -53,6 +56,7 @@ class BuildingService
             [
                 'data' => $data,
                 'dataRelation' => $dataRelation,
+                'image' => $image,
             ]
         );
     }
