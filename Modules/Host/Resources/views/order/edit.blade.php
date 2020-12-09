@@ -104,19 +104,19 @@
                         <hr>
                         <!-- this row will not appear when printing -->
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-6">
                                 <form action="{{ route('host.dat-lich-xem-phong.update', [$data->id]) }}" method="post">
                                     @csrf
                                     @method('PUT')
                                     <input type="hidden" name="room_id" value="{{ $data->room_id }}">
-                                    <div class="form-group col-6">
+                                    <div class="form-group">
                                         <label>Phòng cho thuê:</label>
                                         <input type="text" class="form-control" name="name" value="{{ old('name', $data->room->name ) }}" disabled>
                                         @error('name')
                                         <span class="mt-3 errorMsg text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-6">
+                                    <div class="form-group">
                                         <label>Trạng thái cho thuê:</label>
                                         <br>
                                         <div class="icheck-primary d-inline">
@@ -153,11 +153,41 @@
                                           </label>
                                         </div>
                                     </div>
-                                    <div class="form-group col-6">
+                                    <div class="form-group">
                                         <a href="{{ route('host.dat-lich-xem-phong.index') }}" class="btn btn-default mr-3">Trở lại</a>
                                         <button type="submit" class="btn btn-primary">Cập nhật</button>
                                     </div>
                                 </form>
+                            </div>
+                            <div class="col-6">
+                                <div class="bootstrap-timepicker">
+                                    <div class="form-group">
+                                        <label>Thời gian bắt đầu:</label>
+
+                                        <div class="input-group date" id="time-start" data-target-input="nearest">
+                                            <input type="text" name="time_start" class="form-control datetimepicker-input" data-target="#time-start" value="{{ old('time_start') }}" />
+                                            <div class="input-group-append" data-target="#time-start" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                            </div>
+                                        </div>
+                                        <!-- /.input group -->
+                                    </div>
+                                    <!-- /.form group -->
+                                </div>
+                                <div class="bootstrap-timepicker">
+                                    <div class="form-group">
+                                        <label>Thời gian kết thúc:</label>
+
+                                        <div class="input-group date" id="time-end" data-target-input="nearest">
+                                            <input type="text" name="time_end" class="form-control datetimepicker-input" data-target="#time-end" value="{{ old('time_end') }}" />
+                                            <div class="input-group-append" data-target="#time-end" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                            </div>
+                                        </div>
+                                        <!-- /.input group -->
+                                    </div>
+                                    <!-- /.form group -->
+                                </div>
                             </div>
                         </div>
                       </div>
@@ -178,6 +208,16 @@
 
             $('.select2bs4').select2({
                 theme: 'bootstrap4'
+            })
+
+            //Timepicker
+            $('#time-start').datetimepicker({
+                pickTime: true,
+                format: 'DD-MM-YYYY',
+            })
+            $('#time-end').datetimepicker({
+                pickTime: true,
+                format: 'DD-MM-YYYY',
             })
         })
     </script>

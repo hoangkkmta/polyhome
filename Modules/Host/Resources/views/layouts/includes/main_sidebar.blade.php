@@ -119,13 +119,6 @@
                                 <p>Danh sách</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('host.tro-chuyen.listSoftDelete') }}"
-                                class="nav-link {{ request()->routeIs('host.tro-chuyen.listSoftDelete') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thùng rác</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
 
