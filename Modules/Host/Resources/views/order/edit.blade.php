@@ -165,7 +165,7 @@
                                         <div class="form-group">
                                             <label>Thời gian bắt đầu:</label>
                                             <div class="input-group date" id="date-start" data-target-input="nearest">
-                                                <input type="text" name="date_start" class="form-control datetimepicker-input" data-target="#date-start" value="{{ old('date_start') }}" />
+                                                <input type="text" name="date_start" class="form-control datetimepicker-input" data-target="#date-start" value="{{ old('date_start', $data->room->date_start) }}" />
                                                 <div class="input-group-append" data-target="#date-start" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                                 </div>
@@ -178,7 +178,7 @@
                                         <div class="form-group">
                                             <label>Thời gian kết thúc:</label>
                                             <div class="input-group date" id="date-end" data-target-input="nearest">
-                                                <input type="text" name="date_end" class="form-control datetimepicker-input" data-target="#date-end" value="{{ old('date_end') }}" />
+                                                <input type="text" name="date_end" class="form-control datetimepicker-input" data-target="#date-end" value="{{ old('date_end', $data->room->date_end) }}" />
                                                 <div class="input-group-append" data-target="#date-end" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                                 </div>
