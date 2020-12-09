@@ -62,10 +62,15 @@ class BuildingCustomerService
         $data['utility_room'] = Utility::where('type', 'room')->get();
         $data['host'] = Host::where('id', $data['building']->host_id)->first();
         // dd($data['host']);
+        $arrUtilityBuilding = json_decode($data['building']->utility_id);
+        $arrUtilityRoom = json_decode($data['room'][0]->utility_id);
+        // dd($arrUtilityRoom);
         return view(
             'customer::building.detail_building',
             [
                 'data' => $data,
+                'arrUtilityBuilding' => $arrUtilityBuilding,
+                'arrUtilityRoom' => $arrUtilityRoom,
             ],
         );
     }
@@ -86,10 +91,15 @@ class BuildingCustomerService
         $data['utility_building'] = Utility::where('type', 'building')->get();
         $data['utility_room'] = Utility::where('type', 'room')->get();
         $data['host'] = Host::where('id', $data['building']->host_id)->first();
+
+        $arrUtilityBuilding = json_decode($data['building']->utility_id);
+        $arrUtilityRoom = json_decode($data['room']->utility_id);
         return view(
             'customer::building.building_room_detail',
             [
                 'data' => $data,
+                'arrUtilityBuilding' => $arrUtilityBuilding,
+                'arrUtilityRoom' => $arrUtilityRoom,
             ],
         );
     }

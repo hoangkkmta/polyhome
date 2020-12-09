@@ -48,6 +48,11 @@ class Building extends Model
         return $this->belongsTo(District::class, 'district_id', 'id');
     }
 
+    public function utility()
+    {
+        return $this->belongsTo(Utility::class, 'utility_id', 'id');
+    }
+
     public function room()
     {
         return $this->hasMany(Room::class, 'building_id');

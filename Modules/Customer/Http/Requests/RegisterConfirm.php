@@ -13,8 +13,21 @@ class RegisterConfirm extends FormRequest
      */
     public function rules()
     {
+        $rule =  [
+            'password' => [
+                'required',
+                'confirmed',
+                'min::6',
+            ]
+        ];
+
+        return $rule;
+    }
+
+    public function attributes()
+    {
         return [
-            //
+            'password' => 'Mật khẩu',
         ];
     }
 

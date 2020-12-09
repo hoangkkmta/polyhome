@@ -64,14 +64,6 @@
                                     <label>Email</label>
                                     <input class="form-control" type="email" name="email" placeholder="" value="{{ $email }}" disabled>
                                 </div>
-                                @error('email')
-                                <div>
-                                    <label class="col-form-label text-danger">
-                                        {{ $message }}</i>
-                                    </label>
-                                </div>
-                                @enderror
-
                                 <div class="form-group">
                                     <label>Mật khẩu</label>
                                     <input class="form-control" type="password" name="password" placeholder="">

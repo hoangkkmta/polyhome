@@ -312,8 +312,16 @@ style="clear: both">
                             <div class="box-convenient" id="promotel-convenient">
                                 <h4 class="">✵ Tiện nghi chung của tòa nhà</h4>
                                 <ul class="list list--3 is-flex">
+
                                     @foreach ($data['utility_building'] as $item)
-                                        <li class="mt--12"> <img width="30px" style="margin-right: 10px" src="{!! url('storage/'.  $item->icon) !!}" />
+                                        <?php
+                                            if (!empty($arrUtilityBuilding)) {
+                                                $selected = (in_array($item->id, $arrUtilityBuilding)) ? 'display:block' : 'display:none';
+                                            } else {
+                                                $selected = 'display:none';
+                                            }
+                                        ?>
+                                        <li class="mt--12" style="{{ $selected }}"> <img width="30px" style="margin-right: 10px" src="{!! url('storage/'.  $item->icon) !!}" />
                                             <span>{{ $item->name }}</span>
                                         </li>
                                     @endforeach
@@ -323,7 +331,14 @@ style="clear: both">
                                 <h4 class="">✵ Tiện nghi chung của phòng</h4>
                                 <ul class="list list--3 is-flex">
                                     @foreach ($data['utility_room'] as $item)
-                                        <li class="mt--12"> <img width="30px" style="margin-right: 10px" src="{!! url('storage/'.  $item->icon) !!}" />
+                                        <?php
+                                            if (!empty($arrUtilityRoom)) {
+                                                $selected = (in_array($item->id, $arrUtilityRoom)) ? 'display:block' : 'display:none';
+                                            } else {
+                                                $selected = 'display:none';
+                                            }
+                                        ?>
+                                        <li class="mt--12" style="{{ $selected }}"> <img width="30px" style="margin-right: 10px" src="{!! url('storage/'.  $item->icon) !!}" />
                                             <span>{{ $item->name }}</span>
                                         </li>
                                     @endforeach
