@@ -39,7 +39,7 @@
                                 <h5><span class="flaticon-envelope"></span>E-mail:</h5>
                                 <p><a href=""><span
                                             class="__cf_email__"
-                                            data-cfemail="7b12151d143b191a151f1415550d15">admin@itroom.xyz</span></a>
+                                            data-cfemail="7b12151d143b191a151f1415550d15">admin@polyhome.xyz</span></a>
                                 </p>
                             </li>
                             <li class="contact-item">
@@ -49,14 +49,14 @@
                             <li class="contact-item">
                                 <h5><span class="flaticon-shapes"></span>Mạng xã hội:</h5>
                                 <ul class="footer-social-links">
-                                    <li><a rel="nofollow" href="https://www.facebook.com/itroom.xyz"><i
+                                    <li><a rel="nofollow" href="https://www.facebook.com/polyhome.xyz"><i
                                                 class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a rel="nofollow" href="https://twitter.com/itroom.xyz"><i
+                                    <li><a rel="nofollow" href="https://twitter.com/polyhome.xyz"><i
                                                 class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                     <li><a rel="nofollow"
                                             href="https://www.youtube.com/channel/UCcR3Dh_lj9hXA-Mg_6QnwKQ"><i
                                                 class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                                    <li><a rel="nofollow" href="https://www.linkedin.com/in/bandon"><i
+                                    <li><a rel="nofollow" href="https://www.linkedin.com/in/polyhome.xyz"><i
                                                 class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                 </ul>
                             </li>
@@ -89,7 +89,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="copyright">
-                    <p>© Bản quyền thuộc về <a href="index.html" title="itroom.xyz">itroom.xyz</a> 2020. </p>
+                    <p>© Bản quyền thuộc về <a href="index.html" title="polyhome.xyz">polyhome.xyz</a> 2020. </p>
                 </div>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
