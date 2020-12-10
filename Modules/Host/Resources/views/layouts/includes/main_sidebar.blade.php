@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link">
-        <span class="brand-text font-weight-light">Thue phong tro</span>
+        <span class="brand-text font-weight-light">POLYHOME</span>
     </a>
 
     <!-- Sidebar -->
