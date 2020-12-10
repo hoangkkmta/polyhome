@@ -106,7 +106,11 @@ class BuildingCustomerService
 
     public function listBuildingDistrict()
     {
-        $data['building'] = Building::where('status', 1)->orderBy('id', 'desc')->paginate(8);
+        $data['building'] = Building::join('rooms', 'buildings.id', 'rooms.building_id')
+                            ->select('buildings.*')
+                            ->distinct()
+                            ->where('buildings.status', 1)
+                            ->orderBy('buildings.id', 'desc')->paginate(8);
         $data['district'] = District::all();
         $data['post'] = Post::all()->sortByDesc('id')->take(4);
 
@@ -138,7 +142,13 @@ class BuildingCustomerService
 
     public function listBuildingSchool()
     {
-        $data['building'] = Building::where('status', 1)->orderBy('id', 'desc')->paginate(8);
+        $data['building'] = Building::join('rooms', 'buildings.id', 'rooms.building_id')
+                            ->select('buildings.*')
+                            ->distinct()
+                            ->where('buildings.status', 1)
+                            ->orderBy('buildings.id', 'desc')
+                            ->paginate(8);
+
         $data['school'] = School::all();
         $data['post'] = Post::all()->sortByDesc('id')->take(4);
         return view(
