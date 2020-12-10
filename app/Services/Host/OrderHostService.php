@@ -20,6 +20,7 @@ class OrderHostService
         });
 
         $data = $builder->where('host_id', Auth()->user()->id)
+                        ->orderBy('created_at', 'desc')
                         ->get();
 
         return view(
