@@ -2,7 +2,8 @@
     <div class="header-wrap clearfix">
         <div id="logo" class="logo">
             <a href="{{ route('customer.home') }}" rel="home">
-                <img src="images/brand/logo-horizontal.png" alt="image">
+                <h2 style="font-size: 30px; margin-top:5px">POLYHOME</h2>
+                {{-- <img src="images/brand/logo-horizontal.png" alt="image"> --}}
             </a>
         </div><!-- /.logo -->
         <div class="nav-wrap">
