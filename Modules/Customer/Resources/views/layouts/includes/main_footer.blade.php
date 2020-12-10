@@ -7,7 +7,7 @@
                     <div class="widget widget_text" style="margin-bottom: 18px">
                         <h4 class="widget-title">Chúng tôi</h4>
                         <div class="textwidget">
-                            <p>Với hệ thống căn hộ tiện ích đạt chuẩn, Bản Đôn chú trọng xây dựng tính cộng đồng
+                            <p>Với hệ thống căn hộ tiện ích đạt chuẩn, POLYHOME chú trọng xây dựng tính cộng đồng
                                 và phát triển đời sống xã hội cho thế hệ trẻ dựa trên sức mạnh của công nghệ.
                             </p>
                         </div>

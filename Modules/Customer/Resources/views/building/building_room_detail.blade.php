@@ -503,7 +503,7 @@ style="clear: both">
                         <img src="images/brand/operate_unit_eee.png" />
                     </div>
                     <div class="title-operating-unit">
-                        <p class="name-unit">Bản Đôn</p>
+                        <p class="name-unit">POLYHOME</p>
                         <p class="date-unit">Đơn vị vận hành chung cư mini & nhà trọ</p>
                     </div>
                 </div>

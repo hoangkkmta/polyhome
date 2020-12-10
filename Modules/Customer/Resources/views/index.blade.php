@@ -40,7 +40,7 @@
                             </div>
                             <div class="desc-slide">Thương hiệu hàng đầu về vận hành nhà trọ, chung cư mini áp
                                 dụng công nghệ 4.0</div>
-                            <div class="flat-button-slide">BẢN ĐÔN</div>
+                            <div class="flat-button-slide">POLYHOME</div>
                         </div>
                     </li>
                     <li data-index="rs-618" data-transition="fade" data-slotamount="default"
@@ -89,7 +89,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="text-center" style="font-size: 17px;">
                     <p style="font-size: 17px; margin-bottom: 10px;">Với quy mô hệ thống trên 110 tòa nhà tại Hà
-                        Nội - BẢN ĐÔN tự tin là đơn vị vận hành đầu tiên & tốt nhất áp dụng công nghệ 4.0 vào
+                        Nội - POLYHOME tự tin là đơn vị vận hành đầu tiên & tốt nhất áp dụng công nghệ 4.0 vào
                         quản lý chung cư mini & nhà trọ.
 
                         Là thương hiệu hàng đầu, chúng tôi có đội ngũ chuyên gia giàu kinh nghiệm, luôn giữ
@@ -109,7 +109,7 @@
 <section class="flat-row pad-bottom70px">
     <div class="container">
         <div class="title-section">
-            <h2 class="title">CÓ GÌ Ở BẢN ĐÔN?</h2>
+            <h2 class="title">CÓ GÌ Ở POLYHOME?</h2>
             <span class="border-icon">
                 <span class="title-icon"></span>
             </span>
@@ -331,7 +331,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title-section">
-                    <h2 class="title">TẠI SAO CHỌN BẢN ĐÔN?</h2>
+                    <h2 class="title">TẠI SAO CHỌN POLYHOME?</h2>
                     <span class="border-icon">
                         <span class="title-icon"></span>
                     </span>
@@ -368,7 +368,7 @@
                     <ul>
                         <li class="content">
                             <h4 class="title">VẬN HÀNH 4.0</h4>
-                            <p>Bản Đôn áp dụng "công nghệ 4.0" trong quản lý - vận hành toàn bộ hệ thống nhà
+                            <p>POLYHOME áp dụng "công nghệ 4.0" trong quản lý - vận hành toàn bộ hệ thống nhà
                                 trọ, phòng trọ. </p>
                         </li>
                         <li class="content">
@@ -389,7 +389,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title-section">
-                    <h2 class="title">BÁO CHÍ NÓI VỀ BẢN ĐÔN</h2>
+                    <h2 class="title">BÁO CHÍ NÓI VỀ POLYHOME</h2>
                     <span class="border-icon">
                         <span class="title-icon"></span>
                     </span>
@@ -467,7 +467,7 @@
                                 <li>
                                     <p>Xưa mình ở phòng cũ trả tiền điện cao tới 4 nghìn/ số, mùa hè dùng điều
                                         hòa, tủ lạnh là mỗi tháng đóng thêm 300-500 nghìn tiền điện. Giờ ở phòng
-                                        của Bản Đôn, tiền điện đóng theo quy định nhà nước nên tiết kiệm được
+                                        của POLYHOME, tiền điện đóng theo quy định nhà nước nên tiết kiệm được
                                         khá nhiều và cũng cảm thấy thoải mái hơn vì mình dùng trả đúng giá nhà
                                         nước.</p>
                                 </li>
@@ -485,7 +485,7 @@
                                 </li>
                                 <li>
                                     <p>Tôi là kế toán mức lương cũng vừa đủ sống ở Hà Nội, đi tìm nhiều phòng ở
-                                        khắp khu Cầu Giấy thì chọn được phòng hiện giờ của Bản Đôn, rất thích.
+                                        khắp khu Cầu Giấy thì chọn được phòng hiện giờ của POLYHOME, rất thích.
                                         Tôi thấy mọi thứ đều đầy đủ, có camera an ninh, có thiết bị PCCC mà
                                         nhiều nhà trọ khác không có, chẳng biết thế nào nhưng mình ở vẫn có cảm
                                         giác an tâm hơn.</p>

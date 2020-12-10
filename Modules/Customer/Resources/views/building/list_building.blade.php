@@ -57,7 +57,7 @@
                             tại Hà Nội?</h1>
                         <hr style="margin: 4px 0px 12px" />
                         <h2>Bạn cần tìm phòng trọ, nhà trọ - tìm căn hộ, chung cư mni tại Hà Nội. Hãy đến với hệ
-                            thống +110 tòa nhà tại Đơn vị vận hành nhà Bản Đôn.</h2>
+                            thống +110 tòa nhà tại Đơn vị vận hành nhà POLYHOME.</h2>
                     </div>
                 </div>
             </div>

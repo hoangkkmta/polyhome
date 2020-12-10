@@ -64,7 +64,7 @@
                     <h1 class="title-group">Tìm phòng, căn hộ, chung cư mini các trường Đại học, Cao đẳng Hà Nội
                     </h1>
                     <hr style="margin: 4px 0px 12px" />
-                    <h2>Tìm phòng, căn hộ, chung cư mini gần các trường Đại học, Cao đẳng Hà Nội. Bản Đôn - hệ
+                    <h2>Tìm phòng, căn hộ, chung cư mini gần các trường Đại học, Cao đẳng Hà Nội. POLYHOME - hệ
                         thống tòa nhà cho thuê chính chủ, chất lượng, uy tín!</h2>
                 </div>
                 <div class="clear_fix" style="padding-top: 15px;clear: both">

@@ -50,7 +50,7 @@
                     <h1 class="title-group">Cho thuê phòng, căn hộ mini, chung cư mini full {{ count($data['district']) }} quận Hà Nội</h1>
                     <hr style="margin: 4px 0px 12px" />
                     <h2>Cho thuê phòng trọ, căn hộ mini, căn hộ studio, chung cư mini có ở khắp {{ count($data['district']) }} quận Hà Nội.
-                        Bản Đôn - hệ thống tòa nhà cho thuê chất lượng, uy tín!</h2>
+                        POLYHOME - hệ thống tòa nhà cho thuê chất lượng, uy tín!</h2>
                 </div>
                 <div class="clear_fix" style="padding-top: 15px;clear: both">
                     <div style="padding: 8px;">
