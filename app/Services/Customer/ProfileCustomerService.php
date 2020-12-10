@@ -78,6 +78,7 @@ class ProfileCustomerService
     {
         $account = Auth::user();
         $data = OrderDetail::where('customer_id', $account->id)->get();
+        // dd($data);
         return view(
             'customer::profile.show_order_room',
             ['data' => $data]

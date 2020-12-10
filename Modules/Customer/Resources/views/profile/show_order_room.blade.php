@@ -78,6 +78,35 @@
                             <span class="title-icon"></span>
                         </span>
                     </div><!-- /.title-section -->
+                    <div>
+                        @foreach ($data as $row)
+                            <div class="widget widget_text" style="margin-bottom: 18px; border:1px solid #ccc;padding:20px; border-radius:20px">
+                                <h4 class="widget-title">Mã đơn hàng: {{ $row->id }}</h4>
+                                <div class="textwidget">
+                                    <p>Tên phòng: <b>{{ $row->room->name }}</b></p>
+                                    <p>Số nhà: <b>{{ $row->building->name }}</b></p>
+                                    <p>Ngày đặt lịch: <b>{{ $row->created_at->format('Y-m-d') }}</b></p>
+                                    <p>Thuê nhà từ: <b>{{ $row->room->date_start }}</b> đến <b>{{ $row->room->date_end }}</b></p>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Trạng thái thuê:
+                                        </div>
+                                        <div class="col-md-9">
+                                            @if ($row->room->status == 2)
+                                                <b class="text-warning">Đang chờ cho thuê</b>
+                                            @elseif($row->room->status == 1)
+                                                <b class="text-success">Đã cho thuê</b><br>
+                                            @elseif($row->room->status == 3)
+                                                <b class="text-success">Còn phòng</b>
+                                            @else
+                                                <b class="text-danger">Còn phòng</b>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.widget -->
+                        @endforeach
+                    </div>
 
                 </div><!-- /.col-md-4 -->
 
