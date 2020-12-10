@@ -1,6 +1,6 @@
 @extends('customer::layouts.master')
 
-@section('title', 'Trang chủ')
+@section('title', 'Trang chủ polyhome')
 
 @push('css')
     <link rel="shortcut icon" href="images/brand/favicon.png" type="image/x-icon" />
@@ -24,11 +24,11 @@
                     <li data-index="rs-617" data-transition="fade" data-slotamount="default"
                         data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
                         data-easeout="default" data-masterspeed="default"
-                        data-thumb="/images/banner-webbandon-0111.jpg" data-rotate="0"
+                        data-thumb="/images/banner-a1.png" data-rotate="0"
                         data-saveperformance="off" data-title="One" data-param1="" data-param2="" data-param3=""
                         data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                         data-param9="" data-param10="" data-description="">
-                        <img src="images/banner-webbandon-0111.jpg" alt="Image" data-bgposition="center center"
+                        <img src="images/banner-a1.png" alt="Image" data-bgposition="center center"
                             data-kenburns="on" data-duration="2000" data-ease="Power3.easeInOut"
                             data-scalestart="110" data-scaleend="100" data-rotatestart="0" data-rotateend="0"
                             data-blurstart="20" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0"
@@ -359,7 +359,7 @@
 
             <div class="col-md-4">
                 <div class="single-image-services text-center">
-                    <img src="resize/350x350/a-c/zc-1/f/images/banner-chon-chung-toi-bandon.jpg" alt="images">
+                    <img src="images/anh-a1.png" alt="images">
                 </div>
             </div><!-- /.col-md-4 -->
 
