@@ -694,7 +694,7 @@ style="clear: both">
 var room_id_first = '{{ $data['room']->id }}';
 var motel_id = '30';
 var alias = 'CG001';
-var domain = 'bandon.vn';
+var domain = 'polyhome.xyz';
 jQuery(document).ready(function ($) {
     $('.promotel-slider').slick({
         infinite: true,
