@@ -90,9 +90,17 @@ class BuildingService
             return $this->returnFailedWithRoute('admin.nha-cho-thue.index', __('messages.data_update_failed'));
         } else {
             if (empty($request->file())) {
-                $data['image'] = $building->image;
+
             } else {
-                $data['image'] = $request->file('image')->store('building', 'public');
+                if ($request->hasfile('image')) {
+                    foreach($request->file('image') as $file)
+                    {
+                        $name = uniqid() . '_' . $file->getClientOriginalName();
+                        $file->move(public_path().'/building/', $name);
+                        $image[] = $name;
+                    }
+                }
+                $data['image'] = json_encode($image);
             }
             $building->update($data);
             return $this->returnSuccessWithRoute('admin.nha-cho-thue.index', __('messages.data_update_success'));
