@@ -29,6 +29,11 @@ class OrderDetail extends Model
         return $this->belongsTo(Room::class, 'room_id', 'id');
     }
 
+    public function order()
+    {
+        return $this->belongsTo(Order::class, 'order_id', 'id');
+    }
+
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id', 'id');

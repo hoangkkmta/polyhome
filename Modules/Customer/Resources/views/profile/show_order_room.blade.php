@@ -87,21 +87,21 @@
                                         <p>Tên phòng: <b>{{ $row->room->name }}</b></p>
                                         <p>Số nhà: <b>{{ $row->building->name }}</b></p>
                                         <p>Ngày đặt lịch: <b>{{ $row->created_at->format('Y-m-d') }}</b></p>
+                                        <p>Ngày xem phòng: <b>{{ $row->order->date_view_room }}</b></p>
                                         <p>Thuê nhà từ: <b>{{ $row->room->date_start }}</b> đến <b>{{ $row->room->date_end }}</b></p>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 Trạng thái thuê:
                                             </div>
-                                            <div class="col-md-9">
+                                            <div class="col-md-4">
                                                 @if ($row->room->status == 2)
-                                                    <b class="text-warning">Đang chờ cho thuê</b>
+                                                    <b class="text-warning">Đang chờ xác nhận</b>
                                                 @elseif($row->room->status == 1)
-                                                    <b class="text-success">Đã cho thuê</b><br>
-                                                @elseif($row->room->status == 3)
-                                                    <b class="text-success">Còn phòng</b>
-                                                @else
-                                                    <b class="text-danger">Còn phòng</b>
+                                                    <b class="text-success">Đã thuê</b><br>
                                                 @endif
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button class="btn">Hủy đặt phòng</button>
                                             </div>
                                         </div>
                                     </div>
