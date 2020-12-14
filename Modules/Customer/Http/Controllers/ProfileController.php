@@ -41,4 +41,14 @@ class ProfileController extends Controller
     {
         return $this->profileCustomerService->showOrderRoom();
     }
+
+    public function cancelOrderRoom($id)
+    {
+        return $this->profileCustomerService->cancelOrderRoom($id);
+    }
+
+    public function confirmOrderRoom($id)
+    {
+        return $this->profileCustomerService->confirmOrderRoom($id);
+    }
 }

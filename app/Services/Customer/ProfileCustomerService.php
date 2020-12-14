@@ -5,6 +5,7 @@ namespace App\Services\Customer;
 use App\Models\Contact;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\Room;
 use App\Models\OrderDetail;
 use App\Traits\WebResponseTrait;
 use Illuminate\Support\Facades\Hash;
@@ -83,5 +84,19 @@ class ProfileCustomerService
             'customer::profile.show_order_room',
             ['data' => $data]
         );
+    }
+
+    public function cancelOrderRoom($id)
+    {
+        $orderDetail = OrderDetail::find($id);
+        $room = Room::find($orderDetail->room_id);
+        $dataRoom['status'] = 3;
+        $room->update($dataRoom);
+        return $this->returnFailedWithRoute('customer.tai-khoan.showOrderRoom', __('messages.data_update_success'));
+    }
+
+    public function confirmOrderRoom($id)
+    {
+
     }
 }

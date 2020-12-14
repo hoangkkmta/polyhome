@@ -72,6 +72,7 @@ Route::group([
     Route::post('tai-khoan/doi-mat-khau', 'ProfileController@updatePassword')->name('tai-khoan.updatePassword');
 
     Route::get('danh-sach-dat-lich-xem-phong', 'ProfileController@showOrderRoom')->name('tai-khoan.showOrderRoom');
+    Route::post('huy-dat-lich-xem-phong/{id}', 'ProfileController@cancelOrderRoom')->name('tai-khoan.cancelOrderRoom');
 
     Route::get('tro-chuyen/{host_id}', 'MessageController@showMessage')->name('message');
     Route::post('tro-chuyen', 'MessageController@sendMessage')->name('message.send');

@@ -93,16 +93,34 @@
                                             <div class="col-md-4">
                                                 Trạng thái thuê:
                                             </div>
-                                            <div class="col-md-4">
-                                                @if ($row->room->status == 2)
-                                                    <b class="text-warning">Đang chờ xác nhận</b>
-                                                @elseif($row->room->status == 1)
-                                                    <b class="text-success">Đã thuê</b><br>
-                                                @endif
-                                            </div>
-                                            <div class="col-md-4">
-                                                <button class="btn">Hủy đặt phòng</button>
-                                            </div>
+                                            @if ($row->room->status === 2 || $row->room->status === 1)
+                                                <div class="col-md-4">
+                                                    @if ($row->room->status === 2)
+                                                        <b class="text-warning">Đang chờ xác nhận</b>
+                                                    @elseif($row->room->status === 1)
+                                                        <b class="text-success">Đã thuê</b><br>
+                                                    @endif
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <form
+                                                        action="{{ route('customer.tai-khoan.cancelOrderRoom', [$row->id]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('POST')
+
+                                                        <button type="submit" class="btn btn-app text-danger" onclick="return cancelOrderRoom()">
+                                                            Hủy đặt phòng
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @endif
+
+                                            @if ($row->room->status === 3)
+                                                <div class="col-md-4">
+                                                    <b class="text-success">Hủy thuê phòng</b><br>
+                                                </div>
+                                            @endif
+
                                         </div>
                                     </div>
                                 @endif
@@ -119,3 +137,11 @@
 
 
 @endsection
+
+@push('scripts')
+    <script>
+        function cancelOrderRoom(){
+            return confirm('Bạn có muốn hủy thuê phòng không?');
+        }
+    </script>
+@endpush
