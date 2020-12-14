@@ -86,8 +86,8 @@
                                     <div class="textwidget">
                                         <p>Tên phòng: <b>{{ $row->room->name }}</b></p>
                                         <p>Số nhà: <b>{{ $row->building->name }}</b></p>
-                                        <p>Ngày đặt lịch: <b>{{ $row->created_at->format('Y-m-d') }}</b></p>
-                                        <p>Ngày xem phòng: <b>{{ $row->order->date_view_room }}</b></p>
+                                        <p>Ngày đặt lịch: <b>{{ $row->created_at->format('d/m/Y') }}</b></p>
+                                        <p>Ngày xem phòng: <b> {{ date('d/m/Y', strtotime($row->order->date_view_room)) }}</b></p>
                                         <p>Thuê nhà từ: <b>{{ $row->room->date_start }}</b> đến <b>{{ $row->room->date_end }}</b></p>
                                         <div class="row">
                                             <div class="col-md-4">
