@@ -92,7 +92,7 @@
                                                         @csrf
                                                         @method('DELETE')
 
-                                                        <button type="submit" class="btn btn-app text-danger">
+                                                        <button type="submit" class="btn btn-app text-danger" onclick="return destroy()">
                                                             <i class="far fa-trash-alt"></i> Xóa
                                                         </button>
                                                     </form>

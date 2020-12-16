@@ -32,6 +32,9 @@
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
 
 <script>
+    function destroy(){
+        return confirm('Bạn có muốn xóa không?');
+    }
     function changeImg(input){
         //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
         if(input.files && input.files[0]){
