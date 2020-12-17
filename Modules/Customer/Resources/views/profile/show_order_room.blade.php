@@ -124,7 +124,8 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <a href="{{ route('customer.message', [$row->order->host_id]) }}">Liên hệ chủ nhà</a>
+                                                <a href="{{ route('customer.message', [$row->order->host_id]) }}">Nhắn tin với chủ nhà</a>
+                                                <p>Email: <b>{{ $row->order->customer_email }}</b></p>
                                             </div>
                                         </div>
                                     </div>
