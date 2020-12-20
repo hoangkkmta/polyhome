@@ -24,7 +24,9 @@ class RoomRequest extends FormRequest
                 'required'
             ],
             'price' => [
-                'required'
+                'required',
+                'numeric',
+                'gt:0',
             ],
             'room_category_id' => [
                 'required'

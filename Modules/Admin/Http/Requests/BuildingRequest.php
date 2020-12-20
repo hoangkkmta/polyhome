@@ -17,28 +17,40 @@ class BuildingRequest extends FormRequest
             'name' => [
                 'required'
             ],
+            'price' => [
+                'required',
+                'numeric',
+                'gt:0',
+            ],
             'electricity_price' => [
                 'required',
                 'numeric',
+                'gt:0',
             ],
             'water_price' => [
                 'required',
                 'numeric',
+                'gt:0',
             ],
             'internet_price' => [
                 'required',
                 'numeric',
+                'gt:0',
             ],
             'cleaning_price' => [
                 'required',
                 'numeric',
+                'gt:0',
             ],
             'elevator_price' => [
                 'required',
                 'numeric',
+                'gt:0',
             ],
             'parking_price' => [
-                'required'
+                'required',
+                'numeric',
+                'gt:0',
             ],
             'description' => [
                 'required',
