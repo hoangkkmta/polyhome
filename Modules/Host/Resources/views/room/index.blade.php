@@ -60,46 +60,48 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $row)
-                                        <tr>
-                                            <td>
-                                                {{ $row->id }}
-                                            </td>
-                                            <td>
-                                                {{ $row->name }}
-                                            </td>
-                                            <td>
-                                                {{ $row->building->name }}
-                                            </td>
-                                            <td>
-                                                @if ($row->status == 2)
-                                                    <b class="text-warning">Đang chờ cho thuê</b>
-                                                @elseif($row->status == 1)
-                                                    <b class="text-success">Đã cho thuê</b><br>
-                                                    <b class="text-success">Thời gian thuê từ {{ $row->date_start }} đến {{ $row->date_end }}</b>
-                                                @elseif($row->status == 3)
-                                                    <b class="text-success">Còn phòng</b>
-                                                @else
-                                                <b class="text-danger">Còn phòng</b>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="{{ route('host.phong-cho-thue.show', [$row->id]) }}" class="btn btn-app">
-                                                        <i class="fas fa-edit "></i> Cập nhật
-                                                    </a>
-                                                    <form
-                                                        action="{{ route('host.phong-cho-thue.destroy', [$row->id]) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
+                                        @if (!empty($row->building))
+                                            <tr>
+                                                <td>
+                                                    {{ $row->id }}
+                                                </td>
+                                                <td>
+                                                    {{ $row->name }}
+                                                </td>
+                                                <td>
+                                                    {{ $row->building->name }}
+                                                </td>
+                                                <td>
+                                                    @if ($row->status == 2)
+                                                        <b class="text-warning">Đang chờ cho thuê</b>
+                                                    @elseif($row->status == 1)
+                                                        <b class="text-success">Đã cho thuê</b><br>
+                                                        <b class="text-success">Thời gian thuê từ {{ $row->date_start }} đến {{ $row->date_end }}</b>
+                                                    @elseif($row->status == 3)
+                                                        <b class="text-success">Còn phòng</b>
+                                                    @else
+                                                    <b class="text-danger">Còn phòng</b>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="{{ route('host.phong-cho-thue.show', [$row->id]) }}" class="btn btn-app">
+                                                            <i class="fas fa-edit "></i> Cập nhật
+                                                        </a>
+                                                        <form
+                                                            action="{{ route('host.phong-cho-thue.destroy', [$row->id]) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('DELETE')
 
-                                                        <button type="submit" class="btn btn-app text-danger" onclick="return destroy()">
-                                                            <i class="far fa-trash-alt"></i> Xóa
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                            <button type="submit" class="btn btn-app text-danger" onclick="return destroy()">
+                                                                <i class="far fa-trash-alt"></i> Xóa
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endif
                                     @endforeach
 
                                 </tbody>
